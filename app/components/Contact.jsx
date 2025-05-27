@@ -57,7 +57,7 @@ const Contact = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.7 }}
-        className="text-center max-w-2xl mb-12 font-Ovo"
+        className="text-center max-w-2xl mx-auto mb-12 font-Ovo"
       >
         I'd love to hear from you! If you have any questions, comments or
         feedback, please use the form below.
