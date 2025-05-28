@@ -93,7 +93,7 @@ const About = ({ isDarkMode }) => {
             transition={{ duration: 0.5, delay: 1.3 }}
             className="my-6 text-gray-700 font-Ovo dark:text-white/80"
           >
-            Tools i use
+            Tools, Libraries and FrameWorks i use
           </motion.h4>
           <motion.ul
             initial={{ opacity: 0 }}
