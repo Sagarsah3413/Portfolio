@@ -88,6 +88,12 @@ export const assets = {
 
 export const workData = [
   {
+    title: "TalkToDoc",
+    description: "Telemedicine Platform",
+    bgImage: "talktodoc.png",
+    link: "https://talk-to-doc-phi.vercel.app",
+  },
+  {
     title: "Online Bazzar",
     description: "Self startup e-commerce platform",
     bgImage: "/online_bazzar.jpg",
@@ -110,34 +116,39 @@ export const workData = [
 export const certificationsData = [
   {
     title: "MongoDB Node.js Developer Path",
-    description: "Completed hands-on training in building Node.js applications with MongoDB, covering CRUD, schema design, aggregation, and performance optimization.",
+    description:
+      "Completed hands-on training in building Node.js applications with MongoDB, covering CRUD, schema design, aggregation, and performance optimization.",
     bgImage: "/MongoDB_Nodejs_Developer_Path.png",
     link: "https://learn.mongodb.com/c/NQrVO55NQQGV3JaC5M9uug",
   },
   {
     title: "Advanced Data Structures in Java",
-    description: "Mastered object-oriented programming, implemented efficient data structures and algorithms, and completed real-world projects, including a capstone analyzing social network data.",
+    description:
+      "Mastered object-oriented programming, implemented efficient data structures and algorithms, and completed real-world projects, including a capstone analyzing social network data.",
     bgImage: "/Advanced_Data_Structures_in_Java.png",
     link: "https://www.coursera.org/account/accomplishments/verify/3L29H9YHPYCX",
   },
   {
     title: "Cybersecurity and Its Ten Domains",
-    description: "Covered foundational topics including risk management, cryptography, compliance, and business continuity to build core cybersecurity skills for protecting organizational systems.",
+    description:
+      "Covered foundational topics including risk management, cryptography, compliance, and business continuity to build core cybersecurity skills for protecting organizational systems.",
     bgImage: "/Cybersecurity_and_its_Ten_Domains.png",
     link: "https://www.coursera.org/account/accomplishments/verify/Y862P6YFKU5K",
   },
   {
-    title:"Algorithms on Graphs",
-    description: "Learned advanced graph algorithms, including shortest paths, minimum spanning trees, and network flows, with practical applications in computer science and engineering.",
+    title: "Algorithms on Graphs",
+    description:
+      "Learned advanced graph algorithms, including shortest paths, minimum spanning trees, and network flows, with practical applications in computer science and engineering.",
     bgImage: "/Algorithms_on_Graphs.png",
-    link: "https://www.coursera.org/account/accomplishments/certificate/PP7VVVSUJG2J",    
+    link: "https://www.coursera.org/account/accomplishments/certificate/PP7VVVSUJG2J",
   },
   {
-    title:"Crash Course on Python",
-    description: "Completed a comprehensive introduction to Python programming, covering data types, control flow, functions, and file handling with hands-on exercises.",
+    title: "Crash Course on Python",
+    description:
+      "Completed a comprehensive introduction to Python programming, covering data types, control flow, functions, and file handling with hands-on exercises.",
     bgImage: "/Crash_Course_on_Python.png",
-    link:"https://www.coursera.org/account/accomplishments/certificate/KPYTZXDJHP9S"
-  }
+    link: "https://www.coursera.org/account/accomplishments/certificate/KPYTZXDJHP9S",
+  },
 ];
 
 export const serviceData = [
@@ -176,7 +187,7 @@ export const infoList = [
     title: "Languages",
     description: "HTML, CSS, JavaScript React Js, Next Js, Node Js",
   },
-   {
+  {
     icon: assets.database_icon,
     iconDark: assets.database_icon_dark,
     title: "Databases",
