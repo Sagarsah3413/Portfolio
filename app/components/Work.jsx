@@ -1,9 +1,29 @@
 import { assets, workData } from "@/assets/assets";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 
 const Work = ({ isDarkMode }) => {
+  const [projects, setProjects] = useState(workData);
+
+  useEffect(() => {
+    const fetchWorkContent = async () => {
+      try {
+        const response = await fetch("/api/content?section=work");
+        if (response.ok) {
+          const result = await response.json();
+          if (result.data && result.data.length > 0) {
+            setProjects(result.data);
+          }
+        }
+      } catch (error) {
+        console.log("Using default work content");
+      }
+    };
+
+    fetchWorkContent();
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -43,7 +63,7 @@ const Work = ({ isDarkMode }) => {
         transition={{ duration: 0.6, delay: 0.9 }}
         className="grid grid-cols-auto gap-5 my-10 dark:text-black"
       >
-        {workData.map((project, index) => (
+        {projects.map((project, index) => (
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
@@ -69,14 +89,14 @@ const Work = ({ isDarkMode }) => {
                       className="w-4"
                     />  </a>
                 ) : (<Image
-                      src={
-                        isDarkMode
-                          ? assets.right_arrow_bold_dark
-                          : assets.right_arrow_bold
-                      }
-                      alt="Right arrow"
-                      className="w-4"
-                    /> )}
+                  src={
+                    isDarkMode
+                      ? assets.right_arrow_bold_dark
+                      : assets.right_arrow_bold
+                  }
+                  alt="Right arrow"
+                  className="w-4"
+                />)}
               </div>
             </div>
           </motion.div>
