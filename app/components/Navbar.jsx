@@ -28,11 +28,10 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
         <Image src={assets.header_bg_color} alt="" className="w-full" />
       </div>
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex justify-between items-center fixed  z-50 ${
-          isScroll
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex justify-between items-center fixed  z-50 ${isScroll
             ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20"
             : ""
-        }`}
+          }`}
       >
         <a href="#top">
           <Image
@@ -42,11 +41,10 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           />
         </a>
         <ul
-          className={`hidden md:flex gap-6 lg:gap-8 rounded-full px-12 py-3 ${
-            isScroll
+          className={`hidden md:flex gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll
               ? ""
               : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
-          } `}
+            } `}
         >
           <li>
             <a className="font-Ovo" href="#top">
@@ -88,6 +86,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               className="w-6"
             />
           </button>
+          <a
+            href="/admin/login"
+            className="hidden font-Ovo md:flex items-center gap-3 px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            title="Admin Dashboard"
+          >
+            ⚙️
+          </a>
           <a
             href="#contact"
             className="hidden font-Ovo lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 dark:border-white/50 "
@@ -143,12 +148,17 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           </li>
           <li>
             <a className="font-Ovo" onClick={closeMenu} href="#work">
-             Certifications
+              Certifications
             </a>
           </li>
           <li>
             <a className="font-Ovo" onClick={closeMenu} href="#contact">
               Contact me
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" onClick={closeMenu} href="/admin/login">
+              ⚙️ Admin
             </a>
           </li>
         </ul>

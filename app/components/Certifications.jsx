@@ -1,8 +1,29 @@
 import { assets, certificationsData } from "@/assets/assets";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+
 const Certifications = ({ isDarkMode }) => {
+  const [certifications, setCertifications] = useState(certificationsData);
+
+  useEffect(() => {
+    const fetchCertificationsContent = async () => {
+      try {
+        const response = await fetch("/api/content?section=certifications");
+        if (response.ok) {
+          const result = await response.json();
+          if (result.data && result.data.length > 0) {
+            setCertifications(result.data);
+          }
+        }
+      } catch (error) {
+        console.log("Using default certifications content");
+      }
+    };
+
+    fetchCertificationsContent();
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -42,13 +63,13 @@ const Certifications = ({ isDarkMode }) => {
         transition={{ duration: 0.6, delay: 0.9 }}
         className="grid grid-cols-auto gap-5 my-10 dark:text-black"
       >
-        {certificationsData.map((certificate, index) => (
+        {certifications.map((certificate, index) => (
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
             className="w-full rounded-lg relative cursor-pointer group overflow-hidden shadow-lg"
             key={index}
-            // style={{ backgroundImage: `url(${certificate.bgImage})` }}
+          // style={{ backgroundImage: `url(${certificate.bgImage})` }}
           >
             <div className="rounded-lg overflow-hidden shadow-md  bg-white">
               <img
